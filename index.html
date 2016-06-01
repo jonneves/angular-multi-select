@@ -1,123 +1,149 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+
+<html lang="en" ng-app="myApp" id="myApp">
+<head>
+
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Angular-multi-select by jonneves</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+
+    <title>AngularJs MultiSelect</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/simple-sidebar.css" >
+    <link rel="stylesheet" href="css/style.css">   
+    <link rel="stylesheet" href="highlight/styles/github.css">
+    <link rel="stylesheet" href="css/isteven-multi-select.css">                        
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">    
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Slab:400,700' type='text/css'>    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  </head>
-  <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/jonneves/angular-multi-select">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/jonneves/angular-multi-select/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/jonneves/angular-multi-select/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+    <script src="js/libs/jquery.min.js"></script>    
+    <script src="js/libs/bootstrap.min.js"></script>    
+    <script src="highlight/highlight.pack.js"></script>
+    <script src="js/libs/angular.min.js"></script>      
+    <script src="js/libs/angular-route.min.js"></script>
+    <script src="js/libs/isteven-multi-select.js"></script>  
+    <script src="js/libs/paypal-button.min.js"></script>      
 
-    <div class="wrapper">
+    <script src="js/app.js"></script>   
+    <script src="js/libs/helper.js"></script>    
+    <script src="js/controllers/demo-minimum.js"></script>        
+    <script src="js/controllers/demo-horizontal-layout.js"></script>        
+    <script src="js/controllers/demo-dynamic-update.js"></script>        
+    <script src="js/controllers/demo-disabling-enabling.js"></script>        
+    <script src="js/controllers/demo-grouping.js"></script>        
+    <script src="js/controllers/demo-callbacks.js"></script>        
+    <script src="js/controllers/demo-single-selection-mode.js"></script>        
 
-      <section>
-        <div id="title">
-          <h1>Angular-multi-select</h1>
-          <p>Layout tweaks for: A multi select dropdown directive for AngularJS. Allows you to use HTML tags and CSS in the data. Requires only AngularJS and nothing else.</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/jonneves">jonneves</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+</head>
+
+<body>    
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand border-bottom">                    
+                    <a href="#/main">
+                        <h5>AngularJs MultiSelect &nbsp;&nbsp;<span class="fa fa-home"></span></h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="#/getting-started">Getting Started</a>
+                </li>
+                <li>
+                    <a href="#/configs-options">Configuration & Options</a>
+                </li>                
+                <li>
+                    Demo:                
+                </li>
+                    <li class="subMenu">
+                        <a href="#/demo-minimum">Minimum</a>
+                    </li>
+                    <li class="subMenu">
+                        <a href="#/demo-horizontal-layout">Horizontal Layout</a>
+                    </li>
+                    <li class="subMenu">
+                        <a href="#/demo-dynamic-update">Dynamic Update</a>
+                    </li>
+                    <li class="subMenu">
+                        <a href="#/demo-disabling-enabling">Disabling / Enabling</a>
+                    </li>                        
+                    <li class="subMenu">
+                        <a href="#/demo-grouping">Grouping</a>
+                    </li>
+                    <li class="subMenu">
+                        <a href="#/demo-helper-elements">Helper Elements</a>
+                    </li>                                      
+                    <li class="subMenu">
+                        <a href="#/demo-output-properties">Output Properties</a>
+                    </li>                                                  
+                    <li class="subMenu">
+                        <a href="#/demo-callbacks">Callbacks</a>
+                    </li>                   
+                    <li class="subMenu">
+                        <a href="#/demo-single-selection-mode">Single Selection Mode</a>
+                    </li>                        
+                <li>
+                    <a href="#/breaking-changes">Breaking Changes</a>
+                </li>                    
+                <li>
+                    <a href="#/dependency-compatibility">Dependency & Compatibility</a>
+                </li>
+                <li>
+                    <a href="#/issues-bug-reporting">Issues & Bug Reporting</a>
+                </li>
+                <li>
+                    <a href="#/contributing">Contributing</a>
+                </li>                
+                <li>
+                    <a href="#/faq">FAQ</a>
+                </li>                       
+                
+                <li>
+                    <a href="#/mit-license">MIT License</a>
+                </li>
+                <li>&nbsp;</li>
+                <li>                
+                    <a href="#/other-cool-stuffs">Other Cool Stuffs</a>
+                </li>                
+            </ul>                    
         </div>
+        <!-- /#sidebar-wrapper -->
 
-        <h1>
-<a id="angularjs-multiselect---tweaks" class="anchor" href="#angularjs-multiselect---tweaks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AngularJS MultiSelect - Tweaks</h1>
-
-<p>All the credits to <a href="http://isteven.github.io/angular-multi-select">http://isteven.github.io/angular-multi-select</a> </p>
-
-<p>Only differences from the original version to this version are some layout tweaks. Now the directive is fully responsive and will truncate item description when it is too long.</p>
-
-<p>You can see it working in here:</p>
-
-<p><a href="http://codepen.io/jonneves/pen/XKWmpr">http://codepen.io/jonneves/pen/XKWmpr</a></p>
-
-<h1>
-<a id="angularjs-multiselect---original-description" class="anchor" href="#angularjs-multiselect---original-description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AngularJS MultiSelect - Original Description</h1>
-
-<p>Pure AngularJS directive which creates a dropdown button with multiple or single selections. 
-Doesn't require jQuery and works well with other Javascript libraries. </p>
-
-<p><img src="https://raw.githubusercontent.com/isteven/angular-multi-select/master/screenshot.png" alt="Screenshot"></p>
-
-<h3>
-<a id="demo--how-to" class="anchor" href="#demo--how-to" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo &amp; How To</h3>
-
-<p>Go to <a href="http://isteven.github.io/angular-multi-select">http://isteven.github.io/angular-multi-select</a></p>
-
-<h3>
-<a id="current-version" class="anchor" href="#current-version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Current Version</h3>
-
-<p>4.0.0</p>
-
-<h3>
-<a id="change-log" class="anchor" href="#change-log" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Change Log</h3>
-
-<p>See <a href="https://github.com/isteven/angular-multi-select/blob/master/CHANGELOG.md">CHANGELOG.md</a>. 
-For those who's upgrading from version 2.x.x, do note that this version is not backward-compatible. Please read the manual
-thoroughly and update your code accordingly. </p>
-
-<h3>
-<a id="bug-reporting" class="anchor" href="#bug-reporting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bug Reporting</h3>
-
-<p>Please follow these steps:</p>
-
-<ol>
-<li>
-<strong>READ THE MANUAL AGAIN</strong>. You might have missed something. This includes the MINIMUM ANGULARJS VERSION and the SUPPORTED BROWSERS.</li>
-<li>The next step is to search in Github's issue section first. There might already be an answer for similar issue. Do check both open and closed issues.</li>
-<li>If there's no previous issue found, then please create a new issue in <a href="https://github.com/isteven/angular-multi-select/issues">https://github.com/isteven/angular-multi-select/issues</a>.</li>
-<li>Please <strong>replicate the problem in JSFiddle or Plunker</strong> (or any other online JS collaboration tool), and include the URL in the issue you are creating.</li>
-<li>When you're done, please close the issue you've created.</li>
-</ol>
-
-<h3>
-<a id="licence" class="anchor" href="#licence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licence</h3>
-
-<p>Released under the MIT license:</p>
-
-<p>The MIT License (MIT)</p>
-
-<p>Copyright (c) 2014-2015 Ignatius Steven (<a href="https://github.com/isteven">https://github.com/isteven</a>)</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
-      </section>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">               
+            <div class="container-fluid removePadding" ng-view></div>
+            <div class="pull-right githubButtons">
+                <a href="https://github.com/jonneves/angular-multi-select" target="_blank" class="download" onclick="ga( 'send', 'event', 'button', 'click' );">
+                    <span class="fa fa-github fa-lg">
+                    </span>
+                    &nbsp; View on Github
+                </a>
+                &nbsp;
+                <iframe src="https://ghbtns.com/github-btn.html?user=jonneves&repo=angular-multi-select&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="21"></iframe>
+                <iframe src="https://ghbtns.com/github-btn.html?user=jonneves&repo=angular-multi-select&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="21"></iframe>        
+                <iframe src="https://ghbtns.com/github-btn.html?user=jonneves&repo=angular-multi-select&type=watch&count=true&v=2" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="21"></iframe>            
+            </div>
+        </div>        
 
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+    <!-- /#wrapper -->
+</body>
 </html>
