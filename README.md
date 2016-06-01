@@ -9,6 +9,9 @@ You can see it working in here:
 
 http://codepen.io/jonneves/pen/XKWmpr
 
+and in here:
+http://jonneves.github.io/angular-multi-select
+
 # AngularJS MultiSelect - Original Description
 
 Pure AngularJS directive which creates a dropdown button with multiple or single selections. 
