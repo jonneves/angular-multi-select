@@ -1,4 +1,16 @@
-# AngularJS MultiSelect
+
+# AngularJS MultiSelect - Tweaks
+
+All the credits to http://isteven.github.io/angular-multi-select 
+
+Only differences from the original version to this version are some layout tweaks. Now the directive is fully responsive and will truncate item description when it is too long.
+
+You can see it working in here:
+
+http://codepen.io/jonneves/pen/XKWmpr
+
+# AngularJS MultiSelect - Original Description
+
 Pure AngularJS directive which creates a dropdown button with multiple or single selections. 
 Doesn't require jQuery and works well with other Javascript libraries. 
 
